@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DelphiRecipeBook.RecipePage"
+             Title="Recipes"
+             BackgroundColor="#E5E6F1">
+    <ScrollView>
+        <StackLayout Margin="15,15,15,15">
+            <Label Text="Enter your recipe here:" FontSize="Title" BackgroundColor="#6F58C9" TextColor="#E5E6F1"></Label>
+            <Entry x:Name="recipeEntry"
+               Placeholder="What's the name of the recipe?"/>
+            <Entry x:Name="authorEntry"
+               Placeholder="Who made this recipe?"/>
+            <Entry x:Name="ingrEntry"
+               Placeholder="What are the ingredients?"/>
+            <Entry x:Name="stepEntry"
+               Placeholder="How do we make it?"/>
+            <Button Text="Add to Database"
+                Clicked="Button_Clicked" />
+            <Button Text="Update Entry"
+                Clicked="upButton_Clicked" />
+            <Button Text="Delete Entry"
+                Clicked="dltButton_Clicked" />
+            <CollectionView x:Name="collectionView" SelectionMode="Single" Margin="5,5,5,5">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="0,5,0,5" BackgroundColor="#83BEAB">
+                            <Label Text="{Binding RecipeName}"
+                                    FontSize="Title"/>
+                            <Label Text="{Binding Author}"
+                                   FontSize="Medium"/>
+                            <Label Text="{Binding Ingredients}"
+                               FontSize="Medium"/>
+                            <Label Text="{Binding Steps}"
+                               FontSize="Medium"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

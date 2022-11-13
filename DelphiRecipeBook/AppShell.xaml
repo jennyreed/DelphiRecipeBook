@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DelphiRecipeBook.AppShell"
+             xmlns:local="clr-namespace:DelphiRecipeBook"
+             Title="Delphi's Recipe Book">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="BlueViolet" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TabBarIsVisible" Value="True"></Setter>
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="BlueViolet" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar x:Name="TabBar">
+        <Tab Title="Home">
+            <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomePage}"></ShellContent>
+        </Tab>
+        <Tab Title="Recipes">
+            <ShellContent Title="Recipes" ContentTemplate="{DataTemplate local:RecipePage}"></ShellContent>
+        </Tab>
+       
+
+    </TabBar>
+    
+
+
+
+
+</Shell>

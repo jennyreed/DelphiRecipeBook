@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DelphiRecipeBook.HomePage"
+             Title="Home"
+             BackgroundColor="#E5E6F1">
+    <ScrollView>
+
+    <StackLayout>
+        <Frame BackgroundColor="#6F58C9" Padding="24" CornerRadius="0">
+            <Image Source="delphiscafe.png" WidthRequest="200" HeightRequest="200"></Image>
+        </Frame>
+
+            <CollectionView x:Name="collectionView" Margin="10,10,10,10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    
+                        <StackLayout Margin="10,10,10,10" BackgroundColor="#83BEAB">
+                            <Label Text="{Binding RecipeName}"
+                                    FontSize="Title"
+                                   FontAttributes="Bold"/>
+                            <Label Text="Created By:"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Author}"
+                                   FontSize="Medium"/>
+                            <Label Text="Ingredients:"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Ingredients}"
+                               FontSize="Medium"/>
+                            <Label Text="Steps:"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Steps}"
+                               FontSize="Medium"/>
+                            <AbsoluteLayout HorizontalOptions="Center">
+                                
+                                
+                                
+                            </AbsoluteLayout>
+                        </StackLayout>
+                    
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+        </ScrollView>
+
+</ContentPage>

@@ -33,12 +33,7 @@
                                    FontSize="Medium"
                                    FontAttributes="Bold"/>
                             <Label Text="{Binding Steps}"
-                               FontSize="Medium"/>
-                            <AbsoluteLayout HorizontalOptions="Center">
-                                
-                                
-                                
-                            </AbsoluteLayout>
+                               FontSize="Medium"/> 
                         </StackLayout>
                     
                 </DataTemplate>

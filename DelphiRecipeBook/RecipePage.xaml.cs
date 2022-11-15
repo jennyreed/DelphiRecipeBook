@@ -46,11 +46,12 @@ namespace DelphiRecipeBook
                 collectionView.ItemsSource = await
                     App.Database.GetRecipeAsync();
             }
+          
 
         }
 
         Recipe lastSelection;
-        void collectionView_SelectionChanged(object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        void OnSelectionChanged(object sender, Xamarin.Forms.SelectionChangedEventArgs e)
         {
             lastSelection = e.CurrentSelection[0] as Recipe;
             recipeEntry.Text = lastSelection.RecipeName;
@@ -58,8 +59,6 @@ namespace DelphiRecipeBook
             ingrEntry.Text = lastSelection.Ingredients;
             stepEntry.Text = lastSelection.Steps;
         }
-
-
 
         async void dltButton_Clicked(object sender, EventArgs e)
         {
